@@ -16,11 +16,20 @@
 // });
 
 use App\Http\Controllers\MainController;
+// メインコントローラーのルート
+Route::get('', 'MainController@index')->name('index');
+Route::get('list', 'MainController@list')->name('list');
+Route::get('show', 'MainController@show')->name('show');
+Route::post('show', 'MainController@show');
 
-Route::get('', 'MainController@index');
+// カンパニーコントローラーのルート
+Route::get('companyNew', 'CompanyController@new')->name('companyNew');
+Route::post('companyNew', 'CompanyController@newPost');
+Route::get('companyEdit', 'CompanyController@edit')->name('companyEdit');
+Route::post('companyEdit', 'CompanyController@editPost');
 
-Route::get('companyNew', 'CompanyController@new');
-Route::post('companyNew', 'CompanyController@new2');
-
-Route::get('companyEdit', 'CompanyController@edit')->name('edit');
-Route::post('companyEdit', 'CompanyController@edit2');
+// マテリアルコントローラーのルート
+Route::get('materialNew', 'MaterialController@new')->name('materialNew');
+Route::post('materialNew', 'MaterialController@newPost');
+Route::get('materialEdit', 'MaterialController@edit')->name('materialEdit');
+Route::post('materialEdit', 'MaterialController@editPost');

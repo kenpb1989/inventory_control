@@ -24,3 +24,4 @@
 @else
   会社名：{{$data}}を編集しました。
 @endif
+<a href="{{route('index')}}">トップに戻る</a>

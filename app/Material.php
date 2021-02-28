@@ -8,7 +8,7 @@ class Material extends Model
 {
     public function company()
     {
-        return $this->belongTo('App\Company');
+        return $this->belongsTo('App\Company');
     }
 
     public function count()

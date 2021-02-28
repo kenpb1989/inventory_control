@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCountsTable extends Migration
+class CreateReportsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,15 @@ class CreateCountsTable extends Migration
      */
     public function up()
     {
-        Schema::create('counts', function (Blueprint $table) {
+        Schema::create('reports', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->char('name', 100);
-            $table->tinyInteger('material_id');
+            $table->date('date');
+            $table->integer('in');
+            $table->integer('out');
+            $table->integer('product');
+            $table->integer('loss');
+            $table->integer('amount');
+            $table->integer('material_id');
             $table->timestamps();
         });
     }
@@ -28,6 +33,6 @@ class CreateCountsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('counts');
+        Schema::dropIfExists('reports');
     }
 }

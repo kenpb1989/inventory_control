@@ -16,7 +16,7 @@ class CreateMaterialsTable extends Migration
         Schema::create('materials', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->char('name', 100);
-            $table->tinyInteger('company_id');
+            $table->integer('company_id');
             $table->timestamps();
         });
     }
