@@ -37,4 +37,5 @@
 @else
   原料名：{{$data}}を登録しました。
 @endif
+<p></p>
 <a href="{{route('index')}}">トップに戻る</a>
