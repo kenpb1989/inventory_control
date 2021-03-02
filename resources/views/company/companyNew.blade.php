@@ -5,6 +5,7 @@
 @section('content')
 
 <h3>会社登録ページ</h3>
+
 @if(!isset($data))
 <table>
   <form action="companyNew" method="POST">

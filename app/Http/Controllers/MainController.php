@@ -25,8 +25,11 @@ class MainController extends Controller
     // 原料詳細ページ
     public function show(Request $request)
     {
+
         $stock = 0;
         if ($request->hidden === 'hidden') {
+            $rules = ['date' => ['required']];
+            $this->validate($request, $rules);
             $newReport = new Report;
             $newReport->date = $request->date;
             $newReport->in = $request->in;

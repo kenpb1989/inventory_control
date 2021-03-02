@@ -15,6 +15,8 @@ class CompanyController extends Controller
 
     public function newPost(Request $request)
     {
+        $rules = ['name' => ['required']];
+        $this->validate($request, $rules);
         $company = new Company;
         $company->name = $request->name;
         $company->save();
@@ -28,6 +30,8 @@ class CompanyController extends Controller
     // 会社情報を編集する
     public function edit(Request $request)
     {
+        $rules = ['name' => ['required']];
+        $this->validate($request, $rules);
         $company = Company::find($request->id);
         return view('company.companyEdit', compact('company'));
     }

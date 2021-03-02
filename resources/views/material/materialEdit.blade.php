@@ -5,6 +5,8 @@
 @section('content')
 
 <h3>原料情報編集ページ</h3>
+
+
 @if(!isset($data))
 <table>
   <form action="materialEdit" method="POST">

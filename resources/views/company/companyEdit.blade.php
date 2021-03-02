@@ -3,6 +3,7 @@
 @section('title', 'companyEdit')
 
 @section('content')
+
 <h3>会社編集ページ</h3>
 @if(!isset($data))
 <table>

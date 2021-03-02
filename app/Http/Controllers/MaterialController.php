@@ -18,6 +18,8 @@ class MaterialController extends Controller
 
     public function newPost(Request $request)
     {
+        $rules = ['name' => ['required']];
+        $this->validate($request, $rules);
         $material = new Material;
         $material->name = $request->name;
         $material->company_id = $request->company_id;
@@ -41,6 +43,8 @@ class MaterialController extends Controller
     }
     public function editPost(Request $request)
     {
+        $rules = ['name' => ['required']];
+        $this->validate($request, $rules);
         $material = Material::find($request->id);
         $material->name = $request->name;
         $material->company_id = $request->company_id;
