@@ -26,7 +26,7 @@ class MainController extends Controller
     public function show(Request $request)
     {
         $stock = 0;
-        if ($request->isMethod('post')) {
+        if ($request->hidden === 'hidden') {
             $newReport = new Report;
             $newReport->date = $request->date;
             $newReport->in = $request->in;
@@ -42,6 +42,9 @@ class MainController extends Controller
             $newReport->save();
         }
 
+        if (isset($request->report_id)) {
+            Report::where('id', $request->report_id)->delete();
+        }
 
         $material = Material::find($request->id);
         $reports = Report::where('material_id', $request->id)->orderBy('date', 'asc')->get();

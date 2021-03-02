@@ -4,7 +4,7 @@
 
 @section('content')
 <h3>原料リストページ</h3>
-<table>
+<table class="table">
     <tr>
       <th>原料名</th>
       <th>会社</th>

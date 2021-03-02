@@ -6,7 +6,7 @@
 <h3>原料詳細ページ</h3>
 <h4>原料名：{{$material->name}}｜｜会社名:{{$material->company->name}}</h4>
 
-<table>
+<table class="table">
     <tr>
       <th>日付</th>
       <th>入荷(kg)</th>
@@ -35,11 +35,20 @@
           <td>{{number_format($report->loss)}}</td>
           <td>{{number_format($report->amount)}}</td>
           <td>{{number_format($stock)}}</td>
+          <td>
+            <form action="show?id={{$material->id}}" method="post">
+              @csrf
+              <input type="hidden" name="report_id" value="{{$report->id}}">
+              <input type="submit" value="削除">
+            </form>
+          </td>
+          <td></td>
         </tr>
     @endforeach
     @endif
     <form action="show?id={{$material->id}}" method="post">
       @csrf
+      <input type="hidden" name="hidden" value="hidden">
         <tr>
           <td>
               <input type="date" name="date">
